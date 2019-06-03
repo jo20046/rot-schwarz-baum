@@ -1,17 +1,14 @@
 public class Main {
     public static void main(String[] args) {
 
-        Tree tree = new Tree();
         Node root = new Node("root");
-        tree.setRoot(root);
+        Tree tree = new Tree(root);
 
         Node left = new Node("left");
-        left.setParent(root);
-        root.setLeftChild(left);
+        tree.insert(left);
 
         Node right = new Node("right");
-        right.setParent(root);
-        root.setRightChild(right);
+        tree.insert(right);
 
         tree.print();
         int i = 0;

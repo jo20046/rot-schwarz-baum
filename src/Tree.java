@@ -13,7 +13,25 @@ class Tree {
         if (isEmpty()) {
             setRoot(newNode);
         } else {
+            insertNode(newNode, getRoot());
+        }
+    }
 
+    private void insertNode(Node newNode, Node parent) {
+        if (newNode.getContent().compareToIgnoreCase(parent.getContent()) < 0) {
+            if (!parent.hasLeftChild()) {
+                parent.setLeftChild(newNode);
+                newNode.setParent(parent);
+            } else {
+                insertNode(newNode, parent.getLeftChild());
+            }
+        } else {
+            if (!parent.hasRightChild()) {
+                parent.setRightChild(newNode);
+                newNode.setParent(parent);
+            } else {
+                insertNode(newNode, parent.getRightChild());
+            }
         }
     }
 
