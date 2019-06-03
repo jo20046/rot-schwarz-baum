@@ -89,8 +89,8 @@ class Tree {
 
     // Fix Colors - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void fixColors() {
-        makeRootAndLeavesBlack(getRoot());
-
+//        makeRootAndLeavesBlack(getRoot());
+        makeChildrenBlack(getRoot());
 
     }
 
@@ -101,6 +101,21 @@ class Tree {
             }
             makeRootAndLeavesBlack(node.getLeftChild());
             makeRootAndLeavesBlack(node.getRightChild());
+        }
+    }
+
+    private void makeChildrenBlack(Node node) {
+        if (node != null) {
+            if (node.getColor() == ColorEnum.RED) {
+                if (node.hasLeftChild()) {
+                    node.getLeftChild().setColor(ColorEnum.BLACK);
+                }
+                if (node.hasRightChild()) {
+                    node.getRightChild().setColor(ColorEnum.BLACK);
+                }
+            }
+            makeChildrenBlack(node.getLeftChild());
+            makeChildrenBlack(node.getRightChild());
         }
     }
 
