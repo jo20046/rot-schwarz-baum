@@ -1,16 +1,21 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Node root = new Node("root");
-        Tree tree = new Tree(root);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("data.csv")));
+        Tree tree = new Tree();
+        for (String line; (line = bufferedReader.readLine()) != null; ) {
+            Node newNode = new Node(line);
+            tree.insert(newNode);
+        }
+        bufferedReader.close();
 
-        Node left = new Node("left");
-        tree.insert(left);
 
-        Node right = new Node("right");
-        tree.insert(right);
 
-        tree.print();
-        int i = 0;
+        tree.print(TraversalEnum.PREORDER);
     }
 }

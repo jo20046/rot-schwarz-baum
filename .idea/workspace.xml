@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc1c6570-cfce-4e79-bac7-e8497688b54e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tree.java" afterDir="false" />
+    <list default="true" id="dc1c6570-cfce-4e79-bac7-e8497688b54e" name="Default Changelist" comment="- Tree class:&#10;  - insert method:&#10;    - recursive&#10;    - sorts by content, alphabetically">
+      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TraversalEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +21,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,16 +69,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="290">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
               <folding>
                 <element signature="e#85#86#0" expanded="true" />
                 <element signature="e#117#118#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#788#789#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
+                <element signature="e#2423#2424#0" expanded="true" />
+                <element signature="e#2486#2487#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TraversalEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="4" selection-start-column="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -84,6 +107,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -95,6 +119,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/data.csv" />
+        <option value="$PROJECT_DIR$/src/TraversalEnum.java" />
         <option value="$PROJECT_DIR$/src/Tree.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
@@ -215,7 +241,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559545360589</updated>
-      <workItem from="1559545365662" duration="2428000" />
+      <workItem from="1559545365662" duration="6334000" />
     </task>
     <task id="LOCAL-00001" summary="- Node class:&#10;  - parent, left child, right child, content&#10;  - getters &amp; setters&#10;- Main class:&#10;  - example &quot;tree&quot; with 3 nodes">
       <created>1559546561675</created>
@@ -224,11 +250,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559546561676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Tree class:&#10;  - root node&#10;  - traversing method to print the tree">
+      <created>1559548105445</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559548105445</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Tree class:&#10;  - insert method:&#10;    - recursive&#10;    - sorts by content, alphabetically">
+      <created>1559549431546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559549431546</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2428000" />
+    <option name="totallyTimeSpent" value="6334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2206" y="-59" width="2112" height="993" extended-state="0" />
@@ -239,7 +279,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27874395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27874395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -249,7 +289,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32998747" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39955604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -268,21 +308,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Node class:&#10;  - parent, left child, right child, content&#10;  - getters &amp; setters&#10;- Main class:&#10;  - example &quot;tree&quot; with 3 nodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Node class:&#10;  - parent, left child, right child, content&#10;  - getters &amp; setters&#10;- Main class:&#10;  - example &quot;tree&quot; with 3 nodes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="- Tree class:&#10;  - root node&#10;  - traversing method to print the tree" />
+    <MESSAGE value="- Tree class:&#10;  - insert method:&#10;    - recursive&#10;    - sorts by content, alphabetically" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Tree class:&#10;  - insert method:&#10;    - recursive&#10;    - sorts by content, alphabetically" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -321,23 +354,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="290">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
           <folding>
             <element signature="e#85#86#0" expanded="true" />
             <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2423#2424#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TraversalEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="270">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>

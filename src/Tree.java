@@ -36,19 +36,55 @@ class Tree {
     }
 
     void print() {
+        print(TraversalEnum.PREORDER);
+    }
+
+    void print(int traversingMethod) {
         if (!isEmpty()) {
-            printNode(getRoot());
+            switch (traversingMethod) {
+                case TraversalEnum.PREORDER:
+                    preorder(getRoot());
+                    break;
+                case TraversalEnum.INORDER:
+                    inorder(getRoot());
+                    break;
+                case TraversalEnum.POSTORDER:
+                    postorder(getRoot());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    private void printNode(Node node) {
+    private void preorder(Node node) {
         System.out.println(node.getContent());
         if (node.hasLeftChild()) {
-            printNode(node.getLeftChild());
+            preorder(node.getLeftChild());
         }
         if (node.hasRightChild()) {
-            printNode(node.getRightChild());
+            preorder(node.getRightChild());
         }
+    }
+
+    private void inorder(Node node) {
+        if (node.hasLeftChild()) {
+            inorder(node.getLeftChild());
+        }
+        System.out.println(node.getContent());
+        if (node.hasRightChild()) {
+            inorder(node.getRightChild());
+        }
+    }
+
+    private void postorder(Node node) {
+        if (node.hasLeftChild()) {
+            postorder(node.getLeftChild());
+        }
+        if (node.hasRightChild()) {
+            postorder(node.getRightChild());
+        }
+        System.out.println(node.getContent());
     }
 
     boolean isEmpty() {
