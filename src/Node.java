@@ -41,4 +41,12 @@ class Node {
     void setContent(String content) {
         this.content = content;
     }
+
+    boolean hasLeftChild() {
+        return leftChild != null;
+    }
+
+    boolean hasRightChild() {
+        return rightChild != null;
+    }
 }
