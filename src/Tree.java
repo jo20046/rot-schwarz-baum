@@ -1,3 +1,5 @@
+import java.awt.*;
+
 class Tree {
 
     // Attributes - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -62,33 +64,27 @@ class Tree {
     }
 
     private void preorder(Node node) {
-        System.out.println(node.toString());
-        if (node.hasLeftChild()) {
+        if (node != null) {
+            System.out.println(node.toString());
             preorder(node.getLeftChild());
-        }
-        if (node.hasRightChild()) {
             preorder(node.getRightChild());
         }
     }
 
     private void inorder(Node node) {
-        if (node.hasLeftChild()) {
+        if (node != null) {
             inorder(node.getLeftChild());
-        }
-        System.out.println(node.toString());
-        if (node.hasRightChild()) {
+            System.out.println(node.toString());
             inorder(node.getRightChild());
         }
     }
 
     private void postorder(Node node) {
-        if (node.hasLeftChild()) {
+        if (node != null) {
             postorder(node.getLeftChild());
-        }
-        if (node.hasRightChild()) {
             postorder(node.getRightChild());
+            System.out.println(node.toString());
         }
-        System.out.println(node.toString());
     }
 
     // Fix Colors - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -98,14 +94,12 @@ class Tree {
 
     }
 
-    void makeRootAndLeavesBlack(Node node) {
-        if (node.equals(getRoot()) || node.isLeaf()) {
-            node.setColor(ColorEnum.BLACK);
-        }
-        if (node.hasLeftChild()) {
+    private void makeRootAndLeavesBlack(Node node) {
+        if (node != null) {
+            if (node.equals(getRoot()) || node.isLeaf()) {
+                node.setColor(ColorEnum.BLACK);
+            }
             makeRootAndLeavesBlack(node.getLeftChild());
-        }
-        if (node.hasRightChild()) {
             makeRootAndLeavesBlack(node.getRightChild());
         }
     }
