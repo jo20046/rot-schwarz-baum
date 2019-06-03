@@ -4,6 +4,7 @@ class Node {
     private Node leftChild;
     private Node rightChild;
     private String content;
+    private int color = ColorEnum.BLACK;
 
     Node (String content) {
         this.setContent(content);
@@ -48,5 +49,23 @@ class Node {
 
     boolean hasRightChild() {
         return rightChild != null;
+    }
+
+    int getColor() {
+        return color;
+    }
+
+    boolean setColor(int color) {
+        if (color == ColorEnum.BLACK || color == ColorEnum.RED) {
+            this.color = color;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return getContent() + "; " + getColor();
     }
 }

@@ -58,7 +58,7 @@ class Tree {
     }
 
     private void preorder(Node node) {
-        System.out.println(node.getContent());
+        System.out.println(node.toString());
         if (node.hasLeftChild()) {
             preorder(node.getLeftChild());
         }
@@ -71,7 +71,7 @@ class Tree {
         if (node.hasLeftChild()) {
             inorder(node.getLeftChild());
         }
-        System.out.println(node.getContent());
+        System.out.println(node.toString());
         if (node.hasRightChild()) {
             inorder(node.getRightChild());
         }
@@ -84,7 +84,7 @@ class Tree {
         if (node.hasRightChild()) {
             postorder(node.getRightChild());
         }
-        System.out.println(node.getContent());
+        System.out.println(node.toString());
     }
 
     boolean isEmpty() {

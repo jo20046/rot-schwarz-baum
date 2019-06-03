@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("data.csv")));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("data-small.csv")));
         Tree tree = new Tree();
         for (String line; (line = bufferedReader.readLine()) != null; ) {
             Node newNode = new Node(line);
@@ -16,6 +16,6 @@ public class Main {
 
 
 
-        tree.print(TraversalEnum.PREORDER);
+        tree.print(TraversalEnum.INORDER);
     }
 }
