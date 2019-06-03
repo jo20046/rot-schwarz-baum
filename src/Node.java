@@ -3,14 +3,27 @@ class Node {
     private Node parent;
     private Node leftChild;
     private Node rightChild;
-    private String content;
-    private int color = ColorEnum.BLACK;
+    /*private*/ String content;
+    private int color = ColorEnum.RED;
 
     Node (String content) {
         this.setContent(content);
     }
 
+    // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    boolean hasLeftChild() {
+        return leftChild != null;
+    }
 
+    boolean hasRightChild() {
+        return rightChild != null;
+    }
+
+    boolean isLeaf() {
+        return (!hasLeftChild() && !hasRightChild());
+    }
+
+    // Getter, Setter - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Node getParent() {
         return parent;
     }
@@ -41,14 +54,6 @@ class Node {
 
     void setContent(String content) {
         this.content = content;
-    }
-
-    boolean hasLeftChild() {
-        return leftChild != null;
-    }
-
-    boolean hasRightChild() {
-        return rightChild != null;
     }
 
     int getColor() {

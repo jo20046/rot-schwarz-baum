@@ -91,9 +91,23 @@ class Tree {
         System.out.println(node.toString());
     }
 
+    // Fix Colors - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void fixColors() {
-        int minimumDepth = getMinimumDepth(0, getRoot());
-        System.out.println("minimumDepth = " + minimumDepth);
+        makeRootAndLeavesBlack(getRoot());
+
+
+    }
+
+    void makeRootAndLeavesBlack(Node node) {
+        if (node.equals(getRoot()) || node.isLeaf()) {
+            node.setColor(ColorEnum.BLACK);
+        }
+        if (node.hasLeftChild()) {
+            makeRootAndLeavesBlack(node.getLeftChild());
+        }
+        if (node.hasRightChild()) {
+            makeRootAndLeavesBlack(node.getRightChild());
+        }
     }
 
     int getMinimumDepth(int currentDepth, Node node) {

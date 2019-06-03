@@ -16,7 +16,7 @@ public class Main {
 
 
 
-        tree.print(TraversalEnum.INORDER);
         tree.fixColors();
+        tree.print(TraversalEnum.INORDER);
     }
 }
