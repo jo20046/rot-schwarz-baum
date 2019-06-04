@@ -13,6 +13,14 @@ class Node {
         this.setContent(content);
     }
 
+    Node(Node node) {
+        this.setContent(node.getContent());
+        this.setParent(node.getParent());
+        this.setLeftChild(node.getLeftChild());
+        this.setRightChild(node.getRightChild());
+        this.setColor(node.getColor());
+    }
+
     // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     boolean hasLeftChild() {
         return leftChild != null;
