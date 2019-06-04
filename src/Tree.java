@@ -1,4 +1,5 @@
-import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Tree {
 
@@ -10,16 +11,19 @@ class Tree {
     }
 
     Tree(Node root) {
-        this.setRoot(root);
+        this.insert(root);
     }
 
     // Insert - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void insert(Node newNode) {
         if (isEmpty()) {
-            setRoot(newNode);
+            this.root = newNode;
+            newNode.setParent(null);
         } else {
             insertNode(newNode, getRoot());
         }
+        newNode.setLeftChild(null);
+        newNode.setRightChild(null);
     }
 
     private void insertNode(Node newNode, Node parent) {
@@ -89,9 +93,18 @@ class Tree {
 
     // Fix Colors - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void fixColors() {
-//        makeRootAndLeavesBlack(getRoot());
+        makeEverythingRed(getRoot());
+        makeRootAndLeavesBlack(getRoot());
         makeChildrenBlack(getRoot());
 
+    }
+
+    private void makeEverythingRed(Node node) {
+        if (node != null) {
+            node.setColor(ColorEnum.RED);
+            makeEverythingRed(node.getLeftChild());
+            makeEverythingRed(node.getRightChild());
+        }
     }
 
     private void makeRootAndLeavesBlack(Node node) {
@@ -126,6 +139,64 @@ class Tree {
         int leftDepth = getMinimumDepth(++currentDepth, node.getLeftChild());
         int rightDepth = getMinimumDepth(++currentDepth, node.getRightChild());
         return leftDepth < rightDepth ? leftDepth : rightDepth;
+    }
+
+    // Rotation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Tree rotateCounterClockwise() {
+        Tree newTree = new Tree();
+        Node newRoot = this.getRoot().getRightChild();
+        List<Node> nodesToInsert = getAllNodesExceptNewRoot(newRoot);
+        newTree.insert(newRoot);
+        for (Node node : nodesToInsert) {
+            newTree.insert(node);
+        }
+        newTree.fixColors();
+        return newTree;
+    }
+
+    private List<Node> getAllNodesExceptNewRoot(Node newRoot) {
+        return getNodes(new ArrayList<>(), this.getRoot(), newRoot);
+    }
+
+    private List<Node> getNodes(List<Node> resultList, Node current, Node newRoot) {
+        if (current != null) {
+            if (!current.equals(newRoot)) {
+                resultList.add(current);
+            }
+            getNodes(resultList, current.getLeftChild(), newRoot);
+            getNodes(resultList, current.getRightChild(), newRoot);
+        }
+        return resultList;
+    }
+
+    // Display - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    void display() {
+        final int height = 6, width = 128;
+
+        int len = width * height * 2 + 2;
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 1; i <= len; i++)
+            sb.append(i < len - 2 && i % width == 0 ? "\n" : ' ');
+
+        displayR(sb, width / 2, 1, width / 4, width, this.getRoot(), " ");
+        System.out.println(sb);
+    }
+
+    private void displayR(StringBuilder sb, int c, int r, int d, int w, Node node,
+                          String edge) {
+        if (node != null) {
+            displayR(sb, c - d, r + 2, d / 2, w, node.getLeftChild(), " /");
+
+//            String s = String.valueOf(node.key);
+            String s = node.toString();
+            int idx1 = r * w + c - (s.length() + 1) / 2;
+            int idx2 = idx1 + s.length();
+            int idx3 = idx1 - w;
+            if (idx2 < sb.length())
+                sb.replace(idx1, idx2, s).replace(idx3, idx3 + 2, edge);
+
+            displayR(sb, c + d, r + 2, d / 2, w, node.getRightChild(), "\\ ");
+        }
     }
 
     // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

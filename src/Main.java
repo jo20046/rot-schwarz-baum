@@ -15,8 +15,13 @@ public class Main {
         bufferedReader.close();
 
 
-
-        tree.fixColors();
-        tree.print(TraversalEnum.INORDER);
+//
+//        tree.fixColors();
+//        tree.print(TraversalEnum.PREORDER);
+//        System.out.println();
+//        tree = tree.rotateCounterClockwise();
+//        tree.print(TraversalEnum.PREORDER);
+        tree = tree.rotateCounterClockwise();
+        tree.display();
     }
 }
