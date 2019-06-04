@@ -143,11 +143,28 @@ class Tree {
 
     // Balance - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Tree balanced() {
-        Tree newTree = this;
-        int balance = newTree.getBalance();
-        System.out.println("balance = " + balance);
-
-        return newTree;
+        Tree unbalancedTree = this;
+        Tree balancedTree;
+        while(true) {
+            int oldBalance = unbalancedTree.getBalance();
+            if (oldBalance == 0) {
+                return this;
+            }
+            if (oldBalance > 0) {
+                balancedTree = unbalancedTree.rotate(RotationEnum.CLOCKWISE);
+            } else {
+                balancedTree = unbalancedTree.rotate(RotationEnum.COUNTER_CLOCKWISE);
+            }
+            int newBalance = balancedTree.getBalance();
+            if (newBalance == 0) {
+                return balancedTree;
+            }
+            if ((newBalance > 0 && oldBalance < 0) || (newBalance < 0 && oldBalance > 0)) {
+                return Math.abs(newBalance) < Math.abs(oldBalance) ? balancedTree : unbalancedTree;
+            }
+            unbalancedTree = balancedTree;
+            unbalancedTree.display();
+        }
     }
 
     private int getBalance() {
@@ -203,7 +220,7 @@ class Tree {
 
     // Display - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void display() {
-        final int height = 6, width = 128;
+        final int height = 8, width = 128;
 
         int len = width * height * 2 + 2;
         StringBuilder sb = new StringBuilder(len);
