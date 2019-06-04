@@ -18,8 +18,10 @@ public class Main {
 
 
         tree.display();
+        tree.balanced();
         tree = tree.rotate(RotationEnum.CLOCKWISE);
         System.out.println("\n\n");
         tree.display();
+        tree.balanced();
     }
 }

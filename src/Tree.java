@@ -141,6 +141,28 @@ class Tree {
         return leftDepth < rightDepth ? leftDepth : rightDepth;
     }
 
+    // Balance - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Tree balanced() {
+        Tree newTree = this;
+        int balance = newTree.getBalance();
+        System.out.println("balance = " + balance);
+
+        return newTree;
+    }
+
+    private int getBalance() {
+        return countChildrenR(0, this.getRoot().getLeftChild()) - countChildrenR(0, this.getRoot().getRightChild());
+    }
+
+    private int countChildrenR(int ret, Node node) {
+        if (node != null) {
+            int left = countChildrenR(ret, node.getLeftChild());
+            int right = countChildrenR(ret, node.getRightChild());
+            ret = left + right + 1;
+        }
+        return ret;
+    }
+
     // Rotation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Tree rotate(int direction) {
         Tree newTree = new Tree();
