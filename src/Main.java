@@ -13,15 +13,13 @@ public class Main {
             tree.insert(newNode);
         }
         bufferedReader.close();
+        tree.fixColors();
 
 
-//
-//        tree.fixColors();
-//        tree.print(TraversalEnum.PREORDER);
-//        System.out.println();
-//        tree = tree.rotateCounterClockwise();
-//        tree.print(TraversalEnum.PREORDER);
-        tree = tree.rotateCounterClockwise();
+
+        tree.display();
+        tree = tree.rotate(RotationEnum.CLOCKWISE);
+        System.out.println("\n\n");
         tree.display();
     }
 }

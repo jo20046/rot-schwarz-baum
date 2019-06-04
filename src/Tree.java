@@ -142,9 +142,19 @@ class Tree {
     }
 
     // Rotation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    Tree rotateCounterClockwise() {
+    Tree rotate(int direction) {
         Tree newTree = new Tree();
-        Node newRoot = this.getRoot().getRightChild();
+        Node newRoot = new Node();
+        switch (direction) {
+            case RotationEnum.CLOCKWISE:
+                newRoot = this.getRoot().getLeftChild();
+                break;
+            case RotationEnum.COUNTER_CLOCKWISE:
+                newRoot = this.getRoot().getRightChild();
+                break;
+            default:
+                break;
+        }
         List<Node> nodesToInsert = getAllNodesExceptNewRoot(newRoot);
         newTree.insert(newRoot);
         for (Node node : nodesToInsert) {

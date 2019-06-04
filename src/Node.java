@@ -1,12 +1,15 @@
 class Node {
 
+    private String content;
     private Node parent;
     private Node leftChild;
     private Node rightChild;
-    /*private*/ String content;
     private int color = ColorEnum.RED;
 
-    Node (String content) {
+    Node() {
+    }
+
+    Node(String content) {
         this.setContent(content);
     }
 
