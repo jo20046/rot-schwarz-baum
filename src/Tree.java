@@ -152,7 +152,7 @@ class Tree {
             System.out.println("unbalancedTree.getHeight() = " + unbalancedTree.getHeight());
             int oldBalance = unbalancedTree.getBalance();
             if (oldBalance == 0) {
-                return this;
+                return unbalancedTree;
             }
             if (oldBalance > 0) {
                 balancedTree = unbalancedTree.rotate(RotationEnum.CLOCKWISE);
