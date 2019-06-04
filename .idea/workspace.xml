@@ -69,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
+            <state relative-caret-position="766">
+              <caret line="177" column="22" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#268#269#0" expanded="true" />
@@ -273,7 +273,7 @@
       <option name="presentableId" value="Default" />
       <updated>1559545360589</updated>
       <workItem from="1559545365662" duration="17550000" />
-      <workItem from="1559625980744" duration="13613000" />
+      <workItem from="1559625980744" duration="14257000" />
     </task>
     <task id="LOCAL-00001" summary="- Node class:&#10;  - parent, left child, right child, content&#10;  - getters &amp; setters&#10;- Main class:&#10;  - example &quot;tree&quot; with 3 nodes">
       <created>1559546561675</created>
@@ -380,11 +380,25 @@
       <option name="project" value="LOCAL" />
       <updated>1559643482463</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Display: - writes to file; - height and width calculated dynamically">
+      <created>1559645690329</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559645690329</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Balance: bugfix">
+      <created>1559646020815</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559646020815</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31163000" />
+    <option name="totallyTimeSpent" value="31807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2306" y="-386" width="2337" height="1332" extended-state="0" />
@@ -399,7 +413,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983872" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43306452" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43306452" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6830645" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -443,7 +457,9 @@
     <MESSAGE value="Rotation: whole tree clockwise, manually" />
     <MESSAGE value="Balance: calculate balance and print it" />
     <MESSAGE value="Balance: balances tree as a whole (doesn't balance sub-trees; rotation only at root node)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Balance: balances tree as a whole (doesn't balance sub-trees; rotation only at root node)" />
+    <MESSAGE value="Display: - writes to file; - height and width calculated dynamically" />
+    <MESSAGE value="Balance: bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Balance: bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -587,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
+        <state relative-caret-position="766">
+          <caret line="177" column="22" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#268#269#0" expanded="true" />

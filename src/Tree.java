@@ -148,11 +148,13 @@ class Tree {
     Tree balanced() {
         Tree unbalancedTree = this;
         Tree balancedTree;
+        Tree result;
         while(true) {
             System.out.println("unbalancedTree.getHeight() = " + unbalancedTree.getHeight());
             int oldBalance = unbalancedTree.getBalance();
             if (oldBalance == 0) {
-                return unbalancedTree;
+                result = unbalancedTree;
+                break;
             }
             if (oldBalance > 0) {
                 balancedTree = unbalancedTree.rotate(RotationEnum.CLOCKWISE);
@@ -161,15 +163,19 @@ class Tree {
             }
             int newBalance = balancedTree.getBalance();
             if (newBalance == 0) {
-                return balancedTree;
+                result = balancedTree;
+                break;
             }
             if ((newBalance > 0 && oldBalance < 0) || (newBalance < 0 && oldBalance > 0)) {
-                return Math.abs(newBalance) < Math.abs(oldBalance) ? balancedTree : unbalancedTree;
+                result = Math.abs(newBalance) < Math.abs(oldBalance) ? balancedTree : unbalancedTree;
+                break;
             }
             unbalancedTree = balancedTree;
             unbalancedTree.display();
 
         }
+        result.fixColors();
+        return result;
     }
 
     private int getBalance() {
@@ -204,7 +210,6 @@ class Tree {
         for (Node node : nodesToInsert) {
             newTree.insert(node);
         }
-        newTree.fixColors();
         return newTree;
     }
 
