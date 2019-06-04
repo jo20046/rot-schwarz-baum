@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -146,6 +149,7 @@ class Tree {
         Tree unbalancedTree = this;
         Tree balancedTree;
         while(true) {
+            System.out.println("unbalancedTree.getHeight() = " + unbalancedTree.getHeight());
             int oldBalance = unbalancedTree.getBalance();
             if (oldBalance == 0) {
                 return this;
@@ -164,6 +168,7 @@ class Tree {
             }
             unbalancedTree = balancedTree;
             unbalancedTree.display();
+
         }
     }
 
@@ -220,7 +225,7 @@ class Tree {
 
     // Display - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void display() {
-        final int height = 8, width = 128;
+        final int height = this.getHeight(), width = (int)Math.pow(2, height + 1);
 
         int len = width * height * 2 + 2;
         StringBuilder sb = new StringBuilder(len);
@@ -228,6 +233,14 @@ class Tree {
             sb.append(i < len - 2 && i % width == 0 ? "\n" : ' ');
 
         displayR(sb, width / 2, 1, width / 4, width, this.getRoot(), " ");
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter("out.txt", true));
+            writer.append(sb);
+            writer.append("\n\n\n\n\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println(sb);
     }
 
@@ -251,6 +264,19 @@ class Tree {
     // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     boolean isEmpty() {
         return getRoot() == null;
+    }
+
+    int getHeight() {
+        return getHeightR(0, this.getRoot());
+    }
+
+    private int getHeightR(int current, Node node) {
+        if (node != null) {
+            int left = getHeightR(current + 1, node.getLeftChild());
+            int right = getHeightR(current + 1, node.getRightChild());
+            return Math.max(left, right);
+        }
+        return current;
     }
 
     // Getter, Setter - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
