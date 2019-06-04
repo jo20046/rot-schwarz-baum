@@ -152,7 +152,7 @@ class Tree {
         while(true) {
             System.out.println("unbalancedTree.getHeight() = " + unbalancedTree.getHeight());
             int oldBalance = unbalancedTree.getBalance();
-            if (oldBalance == 0) {
+            if (oldBalance <= 1 && oldBalance >= -1) {
                 result = unbalancedTree;
                 break;
             }
