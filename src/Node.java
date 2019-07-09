@@ -13,14 +13,6 @@ class Node {
         this.setContent(content);
     }
 
-    Node(Node node) {
-        this.setContent(node.getContent());
-        this.setParent(node.getParent());
-        this.setLeftChild(node.getLeftChild());
-        this.setRightChild(node.getRightChild());
-        this.setColor(node.getColor());
-    }
-
     // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     boolean hasLeftChild() {
         return leftChild != null;
@@ -35,7 +27,7 @@ class Node {
     }
 
     // Getter, Setter - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    Node getParent() {
+    private Node getParent() {
         return parent;
     }
 
@@ -63,7 +55,7 @@ class Node {
         return content;
     }
 
-    void setContent(String content) {
+    private void setContent(String content) {
         this.content = content;
     }
 
@@ -71,12 +63,9 @@ class Node {
         return color;
     }
 
-    boolean setColor(int color) {
+    void setColor(int color) {
         if (color == ColorEnum.BLACK || color == ColorEnum.RED) {
             this.color = color;
-            return true;
-        } else {
-            return false;
         }
     }
 

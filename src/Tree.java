@@ -13,14 +13,6 @@ class Tree {
     Tree() {
     }
 
-    Tree(Node root) {
-        this.insert(root);
-    }
-
-    Tree(Tree tree) {
-        this.insert(tree.getRoot());
-    }
-
     // Insert - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     void insert(Node newNode) {
         if (isEmpty()) {
@@ -56,7 +48,7 @@ class Tree {
         print(TraversalEnum.PREORDER);
     }
 
-    void print(int traversingMethod) {
+    private void print(int traversingMethod) {
         if (!isEmpty()) {
             switch (traversingMethod) {
                 case TraversalEnum.PREORDER:
@@ -139,15 +131,6 @@ class Tree {
         }
     }
 
-    int getMinimumDepth(int currentDepth, Node node) {
-        if (!node.hasLeftChild() || !node.hasRightChild()) {
-            return ++currentDepth;
-        }
-        int leftDepth = getMinimumDepth(++currentDepth, node.getLeftChild());
-        int rightDepth = getMinimumDepth(++currentDepth, node.getRightChild());
-        return leftDepth < rightDepth ? leftDepth : rightDepth;
-    }
-
     // Balance - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Tree balanced() {
         Tree unbalancedTree = this;
@@ -162,10 +145,8 @@ class Tree {
             }
             if (oldBalance > 0) {
                 balancedTree = unbalancedTree.rotate(RotationEnum.CLOCKWISE);
-//                balancedTree = unbalancedTree.rotateNew(RotationEnum.CLOCKWISE);
             } else {
                 balancedTree = unbalancedTree.rotate(RotationEnum.COUNTER_CLOCKWISE);
-//                balancedTree = unbalancedTree.rotateNew(RotationEnum.COUNTER_CLOCKWISE);
             }
             int newBalance = balancedTree.getBalance();
             if (newBalance == 0) {
@@ -199,30 +180,7 @@ class Tree {
 
     // Rotation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-//    Tree rotateNew(int direction, Node oldRoot) {
-//        Node parent = getParent(oldRoot);
-//        Node copyOldRoot = new Node(oldRoot);
-//        Node copyRightChildOfOldRoot = new Node(oldRoot.getRightChild());
-//        Node
-//    }
-//
-//    Node getParent(Node child) {
-//        return getParentR(this.getRoot(), child);
-//    }
-//
-//    Node getParentR(Node current, Node child) {
-//        if (current != null) {
-//            if (current.getLeftChild().equals(child) || current.getRightChild().equals(child)) {
-//                return current;
-//            }
-//            Node left = getParentR(current.getLeftChild(), child);
-//            Node right = getParentR(current.getRightChild(), child);
-//            return left != null ? left : right;
-//        }
-//        return null;
-//    }
-
-    Tree rotate(int direction) {
+    private Tree rotate(int direction) {
         Tree newTree = new Tree();
         Node newRoot = new Node();
         switch (direction) {
@@ -297,11 +255,11 @@ class Tree {
     }
 
     // Misc - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    boolean isEmpty() {
+    private boolean isEmpty() {
         return getRoot() == null;
     }
 
-    int getHeight() {
+    private int getHeight() {
         return getHeightR(0, this.getRoot());
     }
 
@@ -315,7 +273,7 @@ class Tree {
     }
 
     // Getter, Setter - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    Node getRoot() {
+    private Node getRoot() {
         return root;
     }
 
