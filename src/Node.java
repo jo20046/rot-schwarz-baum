@@ -71,7 +71,6 @@ class Node {
 
     @Override
     public String toString() {
-//        return getContent() + "; " + getColor();
         String content = getContent();
         return content.substring(0, 4) + (getColor() == ColorEnum.BLACK ? 'B' : 'R');
     }
